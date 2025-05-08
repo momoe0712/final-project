@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 
 class MenuItemView(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
+    permission_classes = [IsAuthenticated]
     serializer_class = menuSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
